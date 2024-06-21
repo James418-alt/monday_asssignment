@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import { MdLock } from "react-icons/md";
 
@@ -15,14 +16,14 @@ const page = () => {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
     }).then(() => {
-      console.log("User created");
+      window.location.reload();
     });
   };
   return (
     <div className="bg-gray-200 h-[100vh] flex justify-center items-center">
       <form
         action={formAction}
-        className="bg-white border p-10 border-gray-500 flex flex-col gap-4"
+        className="bg-white border p-10 border-gray-500 flex flex-col gap-4 w-[30%]"
       >
         <div className="flex flex-col gap-2">
           <h1 className="font-mono text-[20px] font-bold">
@@ -64,6 +65,26 @@ const page = () => {
           </div>
           <div>Register</div>
         </button>
+        <div className="flex flex-col gap-1 justify-center items-center">
+          <Link
+            className="hover:underline font-sans font-light text-[13px] text-blue-600"
+            href=""
+          >
+            Forgot username?
+          </Link>
+          <Link
+            className="hover:underline font-sans font-light text-[13px] text-blue-600"
+            href=""
+          >
+            Forgot password?
+          </Link>
+          <Link
+            className="hover:underline font-sans font-light text-[13px] text-blue-600"
+            href=""
+          >
+            Need help?
+          </Link>
+        </div>
       </form>
     </div>
   );
