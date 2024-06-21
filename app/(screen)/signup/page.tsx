@@ -2,7 +2,7 @@
 import React from "react";
 import { MdLock } from "react-icons/md";
 
-const page = () => {
+const Page = () => {
   const formAction = async (formData: FormData) => {
     // "use server";
     const name = formData.get("name");
@@ -69,4 +69,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
