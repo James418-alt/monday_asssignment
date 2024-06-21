@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import myUserModel from "@/app/utils/model/userModel";
+import { dbConfig } from "@/app/utils/dbConfig";
 
 export const POST = async (req: NextRequest, res: NextResponse) => {
   try {
+    await dbConfig();
     const { name, email, password } = await req.json();
     const salt = await bcrypt.genSalt(10);
     const hashed = await bcrypt.hash(password, salt);
@@ -23,6 +25,7 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
   try {
+    await dbConfig();
     const getD = await myUserModel.find();
     return NextResponse.json({
       message: "User found",
