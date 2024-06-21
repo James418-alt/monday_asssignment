@@ -1,14 +1,15 @@
+"use client";
 import React from "react";
 import { MdLock } from "react-icons/md";
 
 const page = () => {
   const formAction = async (formData: FormData) => {
-    "use server";
+    // "use server";
     const name = formData.get("name");
     const email = formData.get("email");
     const password = formData.get("password");
 
-    const url = "https://monday-asssignment.vercel.app/api/user";
+    const url = "/api/user";
 
     await fetch(url, {
       method: "POST",
