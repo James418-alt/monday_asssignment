@@ -4,7 +4,7 @@ import React from "react";
 import { MdLock } from "react-icons/md";
 
 const page = () => {
-  const formAction = async (formData: FormData) => {
+  const formAction = (formData: FormData) => {
     const email = formData.get("email");
     const password = formData.get("password");
     console.log(email, password);
