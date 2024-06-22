@@ -1,13 +1,19 @@
 "use client";
+import { options } from "@/app/api/auth/[...nextauth]/options";
+import { getServerSession } from "next-auth";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import { MdLock } from "react-icons/md";
 
-const page = () => {
+const page = async () => {
+  const session = await getServerSession(options);
+  console.log(session);
   const formAction = async (formData: FormData) => {
+    // "use server";
     const email = formData.get("email");
     const password = formData.get("password");
+
     signIn("credentials", { email, password });
   };
   return (

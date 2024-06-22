@@ -33,6 +33,7 @@ export const options: NextAuthOptions = {
       },
     }),
   ],
+  secret: "skjdjshchiewuei",
 
   pages: {
     signIn: "/signin",
