@@ -3,9 +3,16 @@ import React from "react";
 import { MdLock } from "react-icons/md";
 
 const page = () => {
+  const formAction = () => {
+    console.log("hey");
+  };
+
   return (
     <div className="bg-gray-200 h-[100vh] flex justify-center items-center">
-      <form className="bg-white border p-10 border-gray-500 flex flex-col gap-4">
+      <form
+        action={formAction}
+        className="bg-white border p-10 border-gray-500 flex flex-col gap-4"
+      >
         <div className="flex flex-col gap-2">
           <h1 className="font-mono text-[20px] font-bold">
             Registeration Form
