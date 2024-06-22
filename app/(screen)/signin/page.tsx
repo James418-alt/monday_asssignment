@@ -1,10 +1,10 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { MdLock } from "react-icons/md";
 
 const page = () => {
   const formAction = async (formData: FormData) => {
-    "use server";
     const email = formData.get("email");
     const password = formData.get("password");
     console.log(email, password);
