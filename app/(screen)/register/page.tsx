@@ -57,6 +57,12 @@ const page = () => {
             type="text"
             name="password"
           />
+          <Link
+            className="text-[10px] hover:underline text-blue-600"
+            href="/signin"
+          >
+            Already have an account? Sign in here
+          </Link>
         </div>
 
         <button className="bg-blue-600 p-2 rounded-[60px] text-white font-sans text-[]14px flex justify-center items-center gap-2 outline-none">
