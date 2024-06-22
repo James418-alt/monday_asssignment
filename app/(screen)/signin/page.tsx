@@ -7,7 +7,9 @@ const page = () => {
     <div className="bg-gray-200 h-[100vh] flex justify-center items-center">
       <form className="bg-white border p-10 border-gray-500 flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <h1 className="font-mono text-[20px] font-bold">Login Form</h1>
+          <h1 className="font-mono text-[20px] font-bold">
+            Registeration Form
+          </h1>
           <div className="w-[30%] bg-green-300 h-[4px]"></div>
         </div>
 
@@ -31,7 +33,7 @@ const page = () => {
             className="text-[10px] hover:underline text-blue-600"
             href="/signin"
           >
-            Don't have an account? Register here
+            Already have an account? Sign in here
           </Link>
         </div>
 
