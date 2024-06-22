@@ -56,7 +56,7 @@ const page = () => {
             className="hover:underline font-sans font-light text-[13px] text-blue-600"
             href=""
           >
-            Forgot username?
+            Forgot usernames og me?
           </Link>
           <Link
             className="hover:underline font-sans font-light text-[13px] text-blue-600"
