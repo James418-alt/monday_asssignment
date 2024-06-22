@@ -39,9 +39,9 @@ const page = () => {
           />
           <Link
             className="text-[10px] hover:underline text-blue-600"
-            href="/register"
+            href="/signin"
           >
-            Don't have an account? Register here
+            Already have an account? Sign in here
           </Link>
         </div>
 
