@@ -3,8 +3,11 @@ import React from "react";
 import { MdLock } from "react-icons/md";
 
 const page = () => {
-  const formAction = () => {
-    console.log("hey");
+  const formAction = async (formData: FormData) => {
+    "use server";
+    const email = formData.get("email");
+    const password = formData.get("password");
+    console.log(email, password);
   };
 
   return (
@@ -14,9 +17,7 @@ const page = () => {
         className="bg-white border p-10 border-gray-500 flex flex-col gap-4"
       >
         <div className="flex flex-col gap-2">
-          <h1 className="font-mono text-[20px] font-bold">
-            Registeration Form
-          </h1>
+          <h1 className="font-mono text-[20px] font-bold">Login Form</h1>
           <div className="w-[30%] bg-green-300 h-[4px]"></div>
         </div>
 
