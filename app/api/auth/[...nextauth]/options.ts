@@ -16,7 +16,7 @@ export const options: NextAuthOptions = {
       },
       async authorize(credentials) {
         const res = await fetch(
-          `https://monday-asssignment.vercel.app/api/user/signin`,
+          "https://monday-asssignment.vercel.app/api/user/signin",
           {
             method: "POST",
             body: JSON.stringify(credentials),
