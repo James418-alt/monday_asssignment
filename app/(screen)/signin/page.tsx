@@ -1,29 +1,15 @@
-"use client";
-import { options } from "@/app/api/auth/[...nextauth]/options";
-import { getServerSession } from "next-auth";
-import { signIn } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import { MdLock } from "react-icons/md";
 
-const page = async () => {
-  const session = await getServerSession(options);
-  console.log(session);
-  const formAction = async (formData: FormData) => {
-    // "use server";
-    const email = formData.get("email");
-    const password = formData.get("password");
-
-    signIn("credentials", { email, password });
-  };
+const page = () => {
   return (
     <div className="bg-gray-200 h-[100vh] flex justify-center items-center">
-      <form
-        action={formAction}
-        className="bg-white border p-10 border-gray-500 flex flex-col gap-4"
-      >
+      <form className="bg-white border p-10 border-gray-500 flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <h1 className="font-mono text-[20px] font-bold">Login Form</h1>
+          <h1 className="font-mono text-[20px] font-bold">
+            Registeration Form
+          </h1>
           <div className="w-[30%] bg-green-300 h-[4px]"></div>
         </div>
 
@@ -45,9 +31,9 @@ const page = async () => {
           />
           <Link
             className="text-[10px] hover:underline text-blue-600"
-            href="/register"
+            href="/signin"
           >
-            Don't have an account? Register here
+            Already have an account? Sign in here
           </Link>
         </div>
 
@@ -55,14 +41,14 @@ const page = async () => {
           <div>
             <MdLock />
           </div>
-          <div>Login</div>
+          <div>Sign In</div>
         </button>
         <div className="flex flex-col gap-1 justify-center items-center">
           <Link
             className="hover:underline font-sans font-light text-[13px] text-blue-600"
             href=""
           >
-            Forgot email?
+            Forgot username?
           </Link>
           <Link
             className="hover:underline font-sans font-light text-[13px] text-blue-600"
