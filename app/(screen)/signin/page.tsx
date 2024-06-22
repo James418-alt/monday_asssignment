@@ -1,3 +1,4 @@
+"use client";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
@@ -5,8 +6,6 @@ import { MdLock } from "react-icons/md";
 
 const page = () => {
   const formAction = async (formData: FormData) => {
-    "use server";
-
     const email = formData.get("email");
     const password = formData.get("password");
     signIn("credentials", { email, password });
