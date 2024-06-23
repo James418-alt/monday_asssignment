@@ -17,7 +17,6 @@ const page = () => {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
     }).then(() => {
-      window.location.reload();
       redirect("/signin");
     });
   };
