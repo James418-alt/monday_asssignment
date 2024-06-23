@@ -35,7 +35,6 @@ const page = () => {
       },
       body: JSON.stringify({ title, description, image: secure_url }),
     }).then(() => {
-      console.log("Done");
       redirect("/");
     });
   };
