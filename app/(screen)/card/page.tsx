@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 import { MdImage, MdPhoto } from "react-icons/md";
 
-const page = async () => {
+const page = () => {
   const formAction = async (formData: FormData) => {
     "use server";
     const title = formData.get("title");
@@ -25,7 +25,7 @@ const page = async () => {
         .end(buff);
     });
 
-    const url = "http://localhost:3000/api/card";
+    const url = "https://monday-asssignment.vercel.app/api/card";
 
     await fetch(url, {
       method: "POST",
@@ -34,7 +34,7 @@ const page = async () => {
       },
       body: JSON.stringify({ title, description, image: secure_url }),
     }).then(() => {
-      window.location.reload();
+      console.log("Done");
       // redirect("/");
     });
   };
