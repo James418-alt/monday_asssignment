@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 import { MdLock } from "react-icons/md";
 
@@ -17,6 +18,7 @@ const page = () => {
       body: JSON.stringify({ name, email, password }),
     }).then(() => {
       window.location.reload();
+      redirect("/signin");
     });
   };
   return (
