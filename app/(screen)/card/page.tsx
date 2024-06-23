@@ -1,7 +1,8 @@
 import cloudinary from "@/app/utils/cloudinary";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
-import { MdImage, MdPhoto } from "react-icons/md";
+import { MdCancel, MdImage, MdPhoto } from "react-icons/md";
 
 const page = () => {
   const formAction = async (formData: FormData) => {
@@ -42,9 +43,13 @@ const page = () => {
   return (
     <form
       action={formAction}
-      className="flex justify-center items-center h-[100vh] w-[100vw] "
+      className="flex justify-center items-center h-[100vh] w-full "
     >
       <div className="flex flex-col gap-4 border border-gray-300 p-5">
+        <Link href="/" className="flex justify-end">
+          <MdCancel className="text-black text-[16px]" />
+        </Link>
+
         <div className="flex flex-col gap-2">
           <span className="font-sans font-light text-[12px]">Title</span>
           <input
