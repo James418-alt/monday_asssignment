@@ -34,7 +34,8 @@ const page = async () => {
       },
       body: JSON.stringify({ title, description, image: secure_url }),
     }).then(() => {
-      redirect("/");
+      window.location.reload();
+      // redirect("/");
     });
   };
 
