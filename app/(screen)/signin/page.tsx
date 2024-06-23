@@ -10,7 +10,9 @@ const Page = () => {
   const formAction = async (formData: FormData) => {
     const email = formData.get("email");
     const password = formData.get("password");
-    signIn("credentials", { email, password });
+    console.log(email, password);
+
+    // signIn("credentials", { email, password });
   };
 
   return (
