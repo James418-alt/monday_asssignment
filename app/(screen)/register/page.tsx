@@ -50,7 +50,7 @@ const page = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <span className="font-sans font-light text-[12px]">Password</span>
           <input
             className="border border-gray-400 p-2 rounded-sm outline-none focus:shadow-md focus:border-blue-600 hover:border-black text-[12px] font-medium"

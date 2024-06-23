@@ -1,13 +1,16 @@
-// "use client";
+"use client";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { MdLock } from "react-icons/md";
 
 const page = () => {
+  const [show, setShow] = useState(true);
   const formAction = async (formData: FormData) => {
-    "use server";
     const email = formData.get("email");
     const password = formData.get("password");
+    signIn("credentials", { email, password });
     console.log(email, password);
   };
 
@@ -25,19 +28,29 @@ const page = () => {
         <div className="flex flex-col gap-1">
           <span className="font-sans font-light text-[12px]">Email</span>
           <input
-            className="border border-gray-400 p-2 rounded-sm outline-none focus:shadow-md focus:border-blue-600 hover:border-black text-[12px] font-medium"
+            className="border border-gray-400 p-2 rounded-sm outline-none  hover:border-black text-[12px] font-medium"
             type="text"
             name="email"
           />
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <span className="font-sans font-light text-[12px]">Password</span>
-          <input
-            className="border border-gray-400 p-2 rounded-sm outline-none focus:shadow-md focus:border-blue-600 hover:border-black text-[12px] font-medium"
-            type="text"
-            name="password"
-          />
+          <div className="flex justify-between items-center border border-gray-400  p-2 rounded-sm outline-non hover:border-black text-[12px] font-medium">
+            <input
+              className=" outline-none"
+              type={show ? "password" : "text"}
+              name="password"
+            />
+            <div
+              onClick={() => {
+                setShow(!show);
+              }}
+            >
+              {show ? <IoMdEyeOff /> : <IoMdEye />}
+            </div>
+          </div>
+
           <Link
             className="text-[10px] hover:underline text-blue-600"
             href="/register"
