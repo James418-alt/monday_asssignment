@@ -5,13 +5,12 @@ import React, { useState } from "react";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { MdLock } from "react-icons/md";
 
-const page = () => {
+const Page = () => {
   const [show, setShow] = useState(true);
   const formAction = async (formData: FormData) => {
     const email = formData.get("email");
     const password = formData.get("password");
     signIn("credentials", { email, password });
-    console.log(email, password);
   };
 
   return (
@@ -90,4 +89,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
