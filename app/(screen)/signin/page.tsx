@@ -12,7 +12,7 @@ const Page = () => {
     const password = formData.get("password");
     console.log(email, password);
 
-    // signIn("credentials", { email, password });
+    signIn("credentials", { email, password });
   };
 
   return (
