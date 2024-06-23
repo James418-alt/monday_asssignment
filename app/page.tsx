@@ -5,9 +5,13 @@ import moment from "moment";
 const page = async () => {
   const res = await fetch("https://monday-asssignment.vercel.app/api/card", {
     method: "GET",
-    headers: {
-      "content-type": "application/json",
+    cache: "no-cache",
+    next: {
+      tags: ["product"],
     },
+    // headers: {
+    //   "content-type": "application/json",
+    // },
   });
   let data = await res.json();
 
