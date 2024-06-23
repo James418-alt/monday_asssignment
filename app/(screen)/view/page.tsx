@@ -20,7 +20,7 @@ const page = async () => {
           <div key={el?._id}>
             <Image alt={el?.title} src={el?.image} width={100} height={100} />
 
-            <p className="mt-1 ml-3 capitalize font-semibold">{el?.title}</p>
+            <p className="mt-1 ml-3 capitalize font-sans">{el?.title}</p>
           </div>
         );
       })}
