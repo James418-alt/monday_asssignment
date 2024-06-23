@@ -3,7 +3,7 @@ import React from "react";
 import moment from "moment";
 
 const page = async () => {
-  const res = await fetch("https://monday-asssignment.vercel.app/api/card"!, {
+  const res = await fetch("https://monday-asssignment.vercel.app/api/card", {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -13,22 +13,22 @@ const page = async () => {
 
   return (
     <div>
-      <div className="p-4 grid grid-rows-3 gap-4 w-full">
+      <div className="p-4 w-full lg:grid lg:grid-flow-row lg:gap-4 sm:flex sm:flex-col sm:justify-center sm:gap-4">
         {data?.data?.map((props: any) => (
           <div
             key={props?._id}
-            className="overflow-hidden border rounded-md w-[300px] h-full"
+            className="overflow-hidden border rounded-md w-[300px] h-[400px]"
           >
             <Image
               alt={props?.title}
               src={props?.image}
               width={1000}
-              height={500}
+              height={1000}
               className="w-full h-[85%] border-b object-cover"
             />
 
             <p className="mt-1 ml-3 capitalize font-semibold">{props?.title}</p>
-            <div className="flex justify-end p-2">
+            <div className="flex justify-end">
               <p className="text-[12px] text-gray-500">
                 {moment
                   .utc(`${props?.createdAt}`)
